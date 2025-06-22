@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 import os
 from bot.handlers import start, menu, operator, price, nomor_hp, handler_ewallet, customer_service
 from bot.logger import setup_logger
-from keep_alive import keep_alive
 
 load_dotenv()
 
@@ -21,7 +20,6 @@ customer_service.register(bot, logger)
 
 def main():
     logger.info("bot running!")
-    keep_alive()
     while True:
         try:
             bot.infinity_polling()
